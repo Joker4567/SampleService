@@ -21,25 +21,11 @@
         </activity>
         <!-- Мониторинг приложений на главном экране и их блокировка (fake of sample) -->
         <service android:name="pro.enaza.feature_lock.service.LockService" />
-        <!-- Автозапуск -->
-        <receiver
-            android:name="pro.enaza.feature_lock.receiver.BootBroadcastReceiver"
-            android:directBootAware="true"
-            android:enabled="true"
-            android:exported="false"
-            tools:targetApi="n">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <action android:name="android.intent.action.BOOT" />
-                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
-                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-                <action android:name="android.intent.action.REBOOT" />
-            </intent-filter>
-        </receiver>
-
+        <!-- Remove base worker -->
+        <provider
+            android:name="androidx.work.impl.WorkManagerInitializer"
+            android:authorities="$com.anufriev.driver.workmanager-init"
+            tools:node="remove" />
     </application>
 
 </manifest>

@@ -51,4 +51,6 @@ dependencies {
     val dagger = rootProject.extra["dagger_version"]
     implementation("com.google.dagger:hilt-android:$dagger")
     kapt("com.google.dagger:hilt-android-compiler:$dagger")
+    //WorkManager
+    implementation("androidx.work:work-runtime-ktx:2.5.0")
 }
