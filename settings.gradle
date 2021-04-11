@@ -1,0 +1,4 @@
+include ':app',
+        ':core-ui',
+        ':feature-lock'
+rootProject.name = "SampleService"
