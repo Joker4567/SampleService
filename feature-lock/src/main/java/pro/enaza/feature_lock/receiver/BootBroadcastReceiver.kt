@@ -3,10 +3,12 @@ package pro.enaza.feature_lock.receiver
 import android.app.ActivityManager
 import android.content.*
 import android.os.Build
+import android.util.Log
 import pro.enaza.feature_lock.service.LockService
 
 class BootBroadcastReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
+        Log.d("MobiGames","onReceive(" + context + "), (" + intent.action + ")")
         serviceStart(context, LockService::class.java)
     }
 
